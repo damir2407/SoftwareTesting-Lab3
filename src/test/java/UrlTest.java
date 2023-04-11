@@ -35,12 +35,15 @@ public class UrlTest {
             driver.manage().window().setSize(new Dimension(1920, 970));
             Util.login(driver);
             Util.waitTime(timeout);
+
             driver.findElement(By.xpath("//div[@id=\'__next\']/div/header/div/div/div[2]/div[2]/div[2]/div")).click();
             driver.findElement(By.xpath("//div[@id=\'__next\']/div/header/div/div/div[2]/div[2]/div[2]/div[4]/div[5]/a")).click();
             vars.put("pageurl", js.executeScript("return window.location.href;"));
             assertEquals(vars.get("pageurl").toString(), "https://simpleswap.io/customer-account/overview");
+            Util.waitTime(timeout);
             driver.findElement(By.xpath("//div[@id=\'root\']/div/div/div/header/div/div[2]/div[4]/button/div")).click();
             Util.waitTime(timeout);
+
             driver.findElement(By.xpath("//div[@id=\'root\']/div/div/div/header/div/div[2]/div[4]/div/div/div[5]/a[2]/div/div")).click();
             vars.put("pageurl", js.executeScript("return window.location.href;"));
             assertEquals(vars.get("pageurl").toString(), "https://simpleswap.io/customer-account/history");

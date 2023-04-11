@@ -2,7 +2,6 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,7 +11,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Util {
@@ -61,8 +59,8 @@ public class Util {
     }
 
     public static void prepareDrivers() {
-        System.setProperty("webdriver.chrome.driver", "E:\\Лабораторные работы\\3 курс\\3 - ТПО\\TPO_lab3\\tpo3\\src\\drivers\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "E:\\Лабораторные работы\\3 курс\\3 - ТПО\\TPO_lab3\\tpo3\\src\\drivers\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", "src/drivers/geckodriver.exe");
     }
 
     public static void login(WebDriver driver) throws InterruptedException {
