@@ -32,7 +32,7 @@ public class UrlTest {
 
             driver.get("https://simpleswap.io/");
 
-            driver.manage().window().setSize(new Dimension(1920, 970));
+            driver.manage().window().setSize(new Dimension(1920, 1080));
             Util.login(driver);
             Util.waitTime(timeout);
 
