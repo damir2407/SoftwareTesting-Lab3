@@ -26,7 +26,7 @@ public class LogOutTest {
         List<WebDriver> drivers = Util.getDrivers();
         for (WebDriver driver : drivers) {
             driver.get("https://simpleswap.io/");
-            driver.manage().window().setSize(new Dimension(1536, 826));
+            driver.manage().window().setSize(new Dimension(1920, 1080));
             Util.login(driver);
             Util.waitTime(timeout);
             {

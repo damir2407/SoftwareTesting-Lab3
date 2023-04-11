@@ -31,7 +31,7 @@ public class GooglePlayRedirectTest {
 
             driver.get("https://simpleswap.io/");
 
-            driver.manage().window().setSize(new Dimension(1920, 970));
+            driver.manage().window().setSize(new Dimension(1920, 1080));
             driver.findElement(By.xpath("//div[@id=\'__next\']/div/footer/div/div/div[2]/div/div/a[2]/img")).click();
             vars.put("pageurl", js.executeScript("return window.location.href;"));
             Util.waitTime(2);

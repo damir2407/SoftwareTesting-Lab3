@@ -26,7 +26,7 @@ public class ChangeCredentialsTest {
         List<WebDriver> drivers = Util.getDrivers();
         for (WebDriver driver : drivers) {
             driver.get("https://simpleswap.io/");
-            driver.manage().window().setSize(new Dimension(1920, 970));
+            driver.manage().window().setSize(new Dimension(1920, 1080));
             Util.login(driver);
             Util.waitTime(timeout);
             driver.findElement(By.xpath("//div[@id=\'__next\']/div/header/div/div/div[2]/div[2]/div[2]/div")).click();

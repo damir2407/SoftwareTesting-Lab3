@@ -34,7 +34,7 @@ public class SignInTest {
 
             driver.get("https://simpleswap.io/");
 
-            driver.manage().window().setSize(new Dimension(1536, 826));
+            driver.manage().window().setSize(new Dimension(1920, 1080));
 
             List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\"__next\"]/div/header/div/div/div[3]"));
             assert (elements.size() > 0);
