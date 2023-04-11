@@ -28,7 +28,11 @@ public class SignUpTest {
     public void signUpTest() throws IOException, InterruptedException {
         List<WebDriver> drivers = Util.getDrivers();
         for (WebDriver driver : drivers) {
+            js = (JavascriptExecutor) driver;
+            vars = new HashMap<>();
+
             driver.get("https://simpleswap.io/");
+
             driver.manage().window().setSize(new Dimension(1536, 826));
             driver.findElement(By.xpath("//div[@id=\'__next\']/div/header/div/div/div[2]/div[2]/a[2]/div")).click();
             driver.findElement(By.xpath("//div[@id=\'root\']/div/div/div/div[2]/div/form/div/div[5]/div/div/div[2]/input")).click();
