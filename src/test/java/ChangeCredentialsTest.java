@@ -5,7 +5,6 @@ import org.junit.Test;
 
 
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.is;
 
 import org.openqa.selenium.*;
 
@@ -14,8 +13,7 @@ import java.util.*;
 
 
 public class ChangeCredentialsTest {
-    private Map<String, Object> vars;
-    private JavascriptExecutor js;
+
     private final long timeout = 2;
 
     @BeforeClass
@@ -27,8 +25,6 @@ public class ChangeCredentialsTest {
     public void changeCredentialsTest() throws IOException, InterruptedException {
         List<WebDriver> drivers = Util.getDrivers();
         for (WebDriver driver : drivers) {
-            js = (JavascriptExecutor) driver;
-            vars = new HashMap<>();
             driver.get("https://simpleswap.io/");
             driver.manage().window().setSize(new Dimension(1920, 970));
             Util.login(driver);
@@ -49,7 +45,7 @@ public class ChangeCredentialsTest {
             Util.waitTime(timeout);
             driver.findElement(By.cssSelector(".sc-cTQhss path")).click();
             Util.waitTime(timeout);
-            assertThat(driver.findElement(By.xpath("//div[@id=\'root\']/div/div/div/div/div[2]/div/div/div[2]/div/div[3]/div/div")).getText(), is("lab3neitmo"));
+            assertEquals(driver.findElement(By.xpath("//div[@id=\'root\']/div/div/div/div/div[2]/div/div/div[2]/div/div[3]/div/div")).getText(),"lab3neitmo");
             driver.findElement(By.xpath("//div[@id=\'root\']/div/div/div/div/div[2]/div/div[3]/div[3]/div/div/div/div[3]/button/span")).click();
             Util.waitTime(timeout);
             WebElement nameInputField2 = driver.findElement(By.xpath("//input[@name=\'name\']"));
@@ -62,7 +58,7 @@ public class ChangeCredentialsTest {
             Util.waitTime(timeout);
             driver.findElement(By.cssSelector(".sc-cTQhss path")).click();
             Util.waitTime(timeout);
-            assertThat(driver.findElement(By.xpath("//div[@id=\'root\']/div/div/div/div/div[2]/div/div/div[2]/div/div[3]/div/div")).getText(), is("lab3itmo"));
+            assertEquals(driver.findElement(By.xpath("//div[@id=\'root\']/div/div/div/div/div[2]/div/div/div[2]/div/div[3]/div/div")).getText(), "lab3itmo");
             driver.quit();
         }
 

@@ -15,7 +15,7 @@ import java.util.*;
 
 public class GooglePlayRedirectTest {
     private Map<String, Object> vars;
-    JavascriptExecutor js;
+    private JavascriptExecutor js;
 
     @BeforeClass
     public static void init() {
