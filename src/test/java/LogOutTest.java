@@ -20,7 +20,7 @@ public class LogOutTest {
     JavascriptExecutor js;
 
     @BeforeClass
-    public static void setUp() {
+    public static void init() {
         Util.prepareDrivers();
     }
 
@@ -45,7 +45,7 @@ public class LogOutTest {
                 List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\"__next\"]/div/header/div/div/div[2]/div[2]/div[2]"));
                 assert (elements.size() == 0);
             }
-
+            driver.quit();
         }
     }
 }
