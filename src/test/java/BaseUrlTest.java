@@ -3,6 +3,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -29,7 +30,6 @@ public class BaseUrlTest {
             js = (JavascriptExecutor) driver;
             vars = new HashMap<>();
             driver.get("https://simpleswap.io/");
-
             driver.manage().window().setSize(new Dimension(1920, 1080));
             driver.findElement(By.xpath("//div[@id=\'__next\']/div/header/div/div/div[2]/div/a")).click();
             Util.waitTime(timeout);
