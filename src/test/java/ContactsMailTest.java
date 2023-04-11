@@ -4,7 +4,6 @@ import org.junit.Test;
 
 
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.is;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,14 +33,14 @@ public class ContactsMailTest {
             driver.findElement(By.xpath("//input[@id=\'fromName\']")).sendKeys("itmotpo3");
             {
                 String value = driver.findElement(By.xpath("//input[@id=\'fromName\']")).getAttribute("value");
-                assertThat(value, is("itmotpo3"));
+                assertEquals(value, "itmotpo3");
             }
             driver.findElement(By.xpath("//input[@id=\'fromEmail\']")).click();
             Util.waitTime(timeout);
             driver.findElement(By.xpath("//input[@id=\'fromEmail\']")).sendKeys("ivandolgihcapt@gmail.com");
             {
                 String value = driver.findElement(By.xpath("//input[@id=\'fromEmail\']")).getAttribute("value");
-                assertThat(value, is("ivandolgihcapt@gmail.com"));
+                assertEquals(value, "ivandolgihcapt@gmail.com");
             }
             driver.findElement(By.xpath("//div[@id=\'__next\']/div/div/div/div/form/div[2]/div/div/div/div")).click();
             Util.waitTime(timeout);
@@ -52,7 +51,7 @@ public class ContactsMailTest {
             driver.findElement(By.xpath("//textarea[@id=\'text\']")).sendKeys("HI!");
             {
                 String value = driver.findElement(By.xpath("//textarea[@id=\'text\']")).getAttribute("value");
-                assertThat(value, is("HI!"));
+                assertEquals(value, "HI!");
             }
             driver.findElement(By.xpath("//div[@id=\'__next\']/div/div/div/div/form/div[4]/button")).click();
             Util.waitTime(timeout);
